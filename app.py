@@ -18,19 +18,19 @@ def predict_survival(d):
 st.title("heart disease Prediction")
 
 # Input fields for each parameter
-age = st.selectbox("age", min_value=29, max_value=77, value=50.0)
-sex = st.selectbox("sex", min_value=0, max_value=1, value=1)
-cp = st.number_input("cp", min_value=0.0, max_value=3.0, value=50.0, step=0.1)
-trestbps = st.number_input("trestbps", min_value=94, max_value=200, value=1)
+age = st.number_input("age", min_value=29, max_value=77, value=50)
+sex = st.number_input("sex", min_value=0, max_value=1, value=1)
+cp = st.number_input("cp", min_value=0, max_value=3, value=0, step=1)
+trestbps = st.number_input("trestbps", min_value=94, max_value=200, value=94)
 chol = st.number_input("chol", min_value=126, max_value=564, value=126)
-fbs = st.number_input("fbs	", min_value=0, max_value=1, value=1, step=0.1)
-restecg = st.selectbox("restecg", min_value=0, max_value=2, value=1)
-thalach = st.selectbox("thalach", min_value=071 max_value=202, value=1)
-exang = st.selectbox("exang", min_value=071 max_value=1, value=1)
-oldpeak = st.selectbox("oldpeak", min_value=071 max_value=6.2, value=1)
-slope = st.selectbox("slope", min_value=071 max_value=2, value=1)
-ca = st.selectbox("ca", min_value=071 max_value=4, value=1)
-thal = st.selectbox("thal", min_value=071 max_value=3, value=1)
+fbs = st.number_input("fbs	", min_value=0, max_value=1, value=1, step=1)
+restecg = st.number_input("restecg", min_value=0, max_value=2, value=1)
+thalach = st.number_input("thalach", min_value=71, max_value=202, value=71)
+exang = st.number_input("exang", min_value=0, max_value=1, value=1)
+oldpeak = st.number_input("oldpeak", min_value=0.0, max_value=6.2, value=1.0)
+slope = st.number_input("slope", min_value=0, max_value=2, value=1)
+ca = st.number_input("ca", min_value=0, max_value=4, value=1)
+thal = st.number_input("thal", min_value=0, max_value=3, value=1)
 
 
 # Map the gender and embarked values to numeric
