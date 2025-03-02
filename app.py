@@ -7,7 +7,7 @@ classifier = joblib.load('knn_model.joblib')
 scaler = joblib.load('scaler.joblib')
 
 # Define the prediction function
-def predict_survival(d):
+def predict_heartattack(d):
     sample_data = pd.DataFrame([d])
     scaled_data = scaler.transform(sample_data)
     pred = classifier.predict(scaled_data)[0]
@@ -51,17 +51,18 @@ input_data = {
     'oldpeak': oldpeak,
     'slope': slope,
     'thal': thal,
+    'ca' : ca,
 
 }
 
 # When the user clicks the "Predict" button
 if st.button("Predict"):
     with st.spinner('Making prediction...'):
-        pred, prob = predict_survival(input_data)
+        pred, prob = predict_heartattack(input_data)
 
         if pred == 1:
             # Survived
-            st.success(f"Prediction: Survived with probability {prob:.2f}")
+            st.success(f"Prediction: heartattack is possible with probability {prob:.2f}")
         else:
             # Not survived
-            st.error(f"Prediction: Did not survive with probability {prob:.2f}")
+            st.error(f"Prediction: heartattack is possible with probability {prob:.2f}")
